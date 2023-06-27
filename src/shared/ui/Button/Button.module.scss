@@ -1,0 +1,27 @@
+.Button {
+    cursor: pointer;
+
+    svg {
+        transition: transform .3s linear;
+        transform: scale(.8);
+    }
+
+    svg:hover {
+        transform: scale(.7);
+    }
+}
+
+.clear {
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.outline {
+    padding: 10px 15px;
+    border: 1px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+}
+
+
