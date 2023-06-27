@@ -2,12 +2,12 @@
     cursor: pointer;
 
     svg {
-        transition: transform .3s linear;
-        transform: scale(.8);
+        transition: transform 0.3s linear;
+        transform: scale(0.8);
     }
 
     svg:hover {
-        transform: scale(.7);
+        transform: scale(0.7);
     }
 }
 
@@ -23,5 +23,3 @@
     background: transparent;
     color: var(--primary-color);
 }
-
-
