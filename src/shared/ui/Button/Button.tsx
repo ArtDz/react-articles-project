@@ -7,6 +7,7 @@ export const enum ThemeButton {
     OUTLINE = 'outline',
     BACKGROUND = 'background',
     BACKGROUND_INVERTED = 'backgroundInverted',
+    GLOW_ON_HOVER = 'glow-on-hover'
 }
 
 export const enum ButtonSize {

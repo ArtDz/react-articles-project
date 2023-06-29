@@ -21,6 +21,10 @@
     --sidebar-width-collapsed: 80px;
 
     // Цвет фона
+    --overlay-color: rgba(0,0,0, .6);
     --bg-color-sidebar: linear-gradient(to right, #8360c3, #6681b2);
     --bg-color-sidebar-collapsed: linear-gradient(to right, #8360c3, #7b68be);
+
+    // z - Indexes
+    --modal-z-index: 10;
 }

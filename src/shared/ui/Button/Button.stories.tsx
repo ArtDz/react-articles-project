@@ -51,6 +51,12 @@ BackgroundInverted.args = {
     theme: ThemeButton.BACKGROUND_INVERTED,
 };
 
+export const BackgroundGlowing = Template.bind({});
+BackgroundGlowing.args = {
+    children: 'Text',
+    theme: ThemeButton.GLOW_ON_HOVER,
+};
+
 export const Square = Template.bind({});
 Square.args = {
     children: '>',
