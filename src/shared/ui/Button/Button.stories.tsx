@@ -79,3 +79,12 @@ SquareSizeXL.args = {
     square: true,
     size: ButtonSize.XL,
 };
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+    children: 'login',
+    theme: ThemeButton.GLOW_ON_HOVER,
+    disabled: true,
+    square: true,
+    size: ButtonSize.L,
+};
