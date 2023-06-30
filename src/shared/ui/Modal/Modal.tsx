@@ -3,7 +3,6 @@ import React, {
     ReactNode, useCallback, useEffect, useRef, useState
 } from 'react'
 import { Portal } from 'shared/ui/Portal/Portal';
-import { useTheme } from 'app/providers/ThemeProvider';
 import cls from './Modal.module.scss'
 
 interface ModalProps {
@@ -11,31 +10,26 @@ interface ModalProps {
     children?: ReactNode,
     isOpen?: boolean,
     onClose?: () => void
+    lazy?: boolean
 }
 
-const ANIMATION_DELAY = 300
-
 export const Modal = ({
-    className, children, isOpen, onClose,
+    className, children, isOpen, onClose, lazy
 }: ModalProps) => {
-    // const [isClosing, setIsClosing] = useState(false)
-    // const timerRef = useRef<ReturnType<typeof setTimeout>>()
+    const [isMounted, setIsMounted] = useState(false)
 
+    useEffect(() => {
+        if (isOpen) {
+            setIsMounted(true)
+        }
+    }, [isOpen])
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
-        // [cls[theme]]: true,
     }
-
     const onContentCLick = (e: React.MouseEvent) => e.stopPropagation()
 
     const closeHandler = useCallback(() => onClose && onClose(), [onClose])
-    // if (onClose) {
-    //     setIsClosing(true)
-    //     timerRef.current = setTimeout(() => {
-    //         onClose()
-    //         setIsClosing(false)
-    //     }, ANIMATION_DELAY)
-    // }
+
     const onKeyDown = useCallback((e: KeyboardEvent) => {
         if (e.key === 'Escape') {
             closeHandler()
@@ -49,9 +43,12 @@ export const Modal = ({
 
         return () => {
             window.removeEventListener('keydown', onKeyDown)
-            // clearTimeout(timerRef.current)
         }
     }, [isOpen, onKeyDown])
+
+    if (lazy && !isMounted) {
+        return null
+    }
 
     return (
         <Portal>
