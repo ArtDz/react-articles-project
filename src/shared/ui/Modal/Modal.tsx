@@ -20,7 +20,6 @@ export const Modal = ({
 }: ModalProps) => {
     // const [isClosing, setIsClosing] = useState(false)
     // const timerRef = useRef<ReturnType<typeof setTimeout>>()
-    // const { theme } = useTheme()
 
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
