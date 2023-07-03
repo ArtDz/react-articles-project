@@ -1,0 +1,39 @@
+.SidebarItem {
+
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+
+  .collapsed {
+
+  }
+}
+
+.icon {
+  transition: color .3s;
+}
+
+.item:hover {
+  color: #fff;
+
+  .icon {
+    fill: #fff;
+  }
+}
+
+.link {
+  opacity: 1;
+  transition: .2s opacity;
+}
+
+.collapsed {
+
+  .link {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+}
