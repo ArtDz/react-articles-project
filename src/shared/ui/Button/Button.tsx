@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import {
     ButtonHTMLAttributes, FC, memo, ReactNode
 } from 'react';
@@ -9,7 +9,8 @@ export const enum ThemeButton {
     OUTLINE = 'outline',
     BACKGROUND = 'background',
     BACKGROUND_INVERTED = 'backgroundInverted',
-    GLOW_ON_HOVER = 'glow-on-hover'
+    GLOW_ON_HOVER = 'glow-on-hover',
+    GLOW_ON_HOVER_DANGER = 'glow-on-hover-danger'
 }
 
 export const enum ButtonSize {
@@ -29,10 +30,10 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button = memo((props: ButtonProps) => {
     const {
-        className, children, theme, square, size, disabled, ...otherProps
+        className, children, theme = ThemeButton.OUTLINE, square, size = ButtonSize.M, disabled, ...otherProps
     } = props;
 
-    const mods = {
+    const mods: Mods = {
         [cls.square]: square,
         [cls.disabled]: disabled
     }

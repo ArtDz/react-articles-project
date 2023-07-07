@@ -1,0 +1,35 @@
+.ProfileCard {
+  padding: 20px;
+  margin-top: 20px;
+  min-height: calc(350px + 6vw);
+  min-width: calc(350px + 6vw);
+  box-sizing: border-box;
+  box-shadow: 0 0 8px 3px rgba(#507280, 0.5);
+  border-radius: 5px;
+  background: #507280;
+}
+
+.editBtn {
+  margin-top: auto;
+  margin-left: auto;
+}
+
+.loading, .error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.readonly {
+  background: #465d64;
+  box-shadow: 0 0 8px 3px rgba(#465d64, 0.5);
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+}
+
+.avatarWrapper {
+  align-self: center;
+}

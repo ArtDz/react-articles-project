@@ -46,20 +46,22 @@ module.exports = {
             'error',
             {
                 markupOnly: true,
-                ignoreAttribute: ['data-testid', 'to', 'placeholder', 'id', 'name', 'labelName'],
+                ignoreAttribute: ['data-testid', 'to', 'placeholder', 'id', 'name', 'labelName', 'alt'],
             },
         ],
-        'max-len': ['error', { ignoreComments: true, code: 120 }],
+        'max-len': ['error', { ignoreComments: true, code: 150 }],
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
         semi: 'off',
         'comma-dangle': 'off',
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
-        'no-param-reassign': 'off'
+        'no-param-reassign': 'off',
+        'no-undef': 'off'
     },
     globals: {
         __IS_DEV__: true,
+        __API__: true
     },
     overrides: [
         {

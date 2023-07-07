@@ -6,6 +6,7 @@ import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { useDispatch } from 'react-redux';
 import { userActions } from 'entities/User';
+import { Select } from 'shared/ui/Select/Select';
 
 function App() {
     const { theme } = useTheme();

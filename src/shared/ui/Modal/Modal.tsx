@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames, Mods } from 'shared/lib/classNames/classNames'
 import React, {
     ReactNode, useCallback, useEffect, useRef, useState
 } from 'react'
@@ -23,7 +23,8 @@ export const Modal = ({
             setIsMounted(true)
         }
     }, [isOpen])
-    const mods: Record<string, boolean> = {
+
+    const mods: Mods = {
         [cls.opened]: isOpen,
     }
     const onContentCLick = (e: React.MouseEvent) => e.stopPropagation()
