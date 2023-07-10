@@ -1,7 +1,15 @@
 .app_dark_theme {
-    --bg-color: #131317;
-    --inverted-bg-color: linear-gradient(to right, #8360c3, #2ebf91);
-    --primary-color: #fff;
-    --secondary-color: #939090;
-    --inverted-primary-color: #000;
+  --bg-color: #131317;
+  --inverted-bg-color: linear-gradient(to right, #8360c3, #2ebf91);
+  --primary-color: #fff;
+  --secondary-color: #939090;
+  --inverted-primary-color: #000;
+
+  // skeleton
+  --skeleton-color: #d5d5e0;
+  --skeleton-shadow: #232323;
+  --code-bg: #34343a;
+
+  // article card
+  --card-bg: #46464e;
 }

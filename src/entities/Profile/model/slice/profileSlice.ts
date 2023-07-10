@@ -10,7 +10,7 @@ const initialState: ProfileSchema = {
     data: undefined
 }
 
-export const userSlice = createSlice({
+export const profileSlice = createSlice({
     name: 'profile',
     initialState,
     reducers: {
@@ -19,6 +19,7 @@ export const userSlice = createSlice({
         },
         cancelEdit: (state) => {
             state.readonly = true
+            state.validateErrors = undefined
             state.form = state.data
         },
         updateProfile: (state, action: PayloadAction<Profile>) => {
@@ -44,7 +45,7 @@ export const userSlice = createSlice({
                 state.error = action.payload
             })
             .addCase(updateProfileData.pending, (state) => {
-                state.error = undefined
+                state.validateErrors = undefined
                 state.isLoading = true
             })
             .addCase(updateProfileData.fulfilled, (state, action: PayloadAction<Profile>) => {
@@ -52,13 +53,14 @@ export const userSlice = createSlice({
                 state.data = action.payload
                 state.form = action.payload
                 state.readonly = true
+                state.validateErrors = undefined
             })
             .addCase(updateProfileData.rejected, (state, action) => {
                 state.isLoading = false
-                state.error = action.payload
+                state.validateErrors = action.payload
             })
     }
 })
 
-export const { actions: profileActions } = userSlice
-export const { reducer: profileReducer } = userSlice
+export const { actions: profileActions } = profileSlice
+export const { reducer: profileReducer } = profileSlice

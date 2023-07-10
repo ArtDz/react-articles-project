@@ -1,0 +1,17 @@
+.app_new_theme {
+  --bg-color: #131317;
+  --inverted-bg-color: linear-gradient(to right, #262626, #4f4e4e);
+  --primary-color: #1bb5cc;
+  --secondary-color: #066593;
+  --inverted-primary-color: #18287e;
+  --bg-color-sidebar: linear-gradient(to right, #000, #4f4e4e);
+  --bg-color-sidebar-collapsed: linear-gradient(to right, #4f4e4e, #262626);
+
+  // skeleton
+  --skeleton-color: #d5d5e0;
+  --skeleton-shadow: #232323;
+  --code-bg: #34343a;
+
+  // article card
+  --card-bg: #46464e;
+}

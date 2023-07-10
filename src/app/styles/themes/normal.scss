@@ -1,7 +1,15 @@
 :root {
-    --bg-color: #e8e8ea;
-    --inverted-bg-color: linear-gradient(to right, #8360c3, #2ebf91);
-    --primary-color: #000;
-    --secondary-color: #939090;
-    --inverted-primary-color: #fff;
+  --bg-color: #e8e8ea;
+  --inverted-bg-color: linear-gradient(to right, #8360c3, #2ebf91);
+  --primary-color: #000;
+  --secondary-color: #939090;
+  --inverted-primary-color: #fff;
+
+  // skeleton
+  --skeleton-color: #d3d3d3;
+  --skeleton-shadow: #424242;
+  --code-bg: #9393c5;
+
+  // article card
+  --card-bg: #9393c5;
 }

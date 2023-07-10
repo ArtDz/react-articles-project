@@ -4,8 +4,8 @@ import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from 'entities/User';
+import { SidebarItemType } from 'widgets/Sidebar/model/types/sidebar';
 import cls from './SidebarItem.module.scss'
-import { SidebarItemType } from '../../model/items';
 
 interface SidebarItemProps {
     item: SidebarItemType

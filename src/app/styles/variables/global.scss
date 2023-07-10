@@ -1,32 +1,32 @@
 @import "https://fonts.googleapis.com/css2?family=Golos+Text&display=swap";
 
 :root {
-    --font-family-main: "Golos Text", "Consolas", sans-serif;
-    --font-size-m: 16px;
-    --font-line-m: 24px;
-    --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
-    --font-size-l: 24px;
-    --font-line-l: 32px;
-    --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
-    --font-size-xl: 32px;
-    --font-line-xl: 40px;
-    --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
+  --font-family-main: "Golos Text", "Consolas", sans-serif;
+  --font-size-m: 16px;
+  --font-line-m: 24px;
+  --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
+  --font-size-l: 24px;
+  --font-line-l: 32px;
+  --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+  --font-size-xl: 32px;
+  --font-line-xl: 40px;
+  --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
 
-    // Размеры
-    --navbar-height: 50px;
-    --sidebar-width: 300px;
-    --sidebar-width-collapsed: 80px;
+  // Размеры
+  --navbar-height: 50px;
+  --sidebar-width: 300px;
+  --sidebar-width-collapsed: 80px;
 
-    // Цвет фона
-    --overlay-color: rgb(0 0 0 / 60%);
-    --bg-color-sidebar: linear-gradient(to right, #8360c3, #6681b2);
-    --bg-color-sidebar-collapsed: linear-gradient(to right, #8360c3, #7b68be);
+  // Цвет фона
+  --overlay-color: rgb(0 0 0 / 60%);
+  --bg-color-sidebar: linear-gradient(to right, #8360c3, #6681b2);
+  --bg-color-sidebar-collapsed: linear-gradient(to right, #8360c3, #7b68be);
 
-    // z - Indexes
-    --modal-z-index: 10;
+  // z - Indexes
+  --modal-z-index: 10;
 
-    // Цвета
-    --gray: #9b9b9b;
-    --red-light: #f00;
-    --red-dark: #c40707;
+  // Цвета
+  --gray: #9b9b9b;
+  --red-light: #f00;
+  --red-dark: #c40707;
 }

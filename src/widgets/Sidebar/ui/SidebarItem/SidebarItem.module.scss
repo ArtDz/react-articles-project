@@ -1,30 +1,31 @@
 .item {
-    display: flex;
-    align-items: flex-start;
-    gap: 5px;
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
 }
 
 .icon {
-    transition: color 0.3s;
+  transition: color 0.3s;
+  fill: var(--primary-color);
 }
 
 .item:hover {
-    color: #fff;
+  color: #fff;
 
-    .icon {
-        fill: #fff;
-    }
+  .icon {
+    fill: #fff;
+  }
 }
 
 .link {
-    opacity: 1;
-    transition: 0.2s opacity;
+  opacity: 1;
+  transition: 0.2s opacity;
 }
 
 .collapsed {
-    .link {
-        opacity: 0;
-        width: 0;
-        height: 0;
-    }
+  .link {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
 }
