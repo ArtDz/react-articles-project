@@ -1,7 +1,7 @@
 .Button {
   cursor: pointer;
   padding: 7px 11px;
-
+  transition: all .3s;
   svg {
     transition: transform 0.3s linear;
     transform: scale(0.8);
@@ -10,6 +10,10 @@
   svg:hover {
     transform: scale(0.7);
   }
+}
+
+.Button:hover {
+  transform: scale(.95);
 }
 
 .disabled {
