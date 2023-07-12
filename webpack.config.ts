@@ -11,6 +11,7 @@ export default (env: BuildEnv) => {
         src: path.resolve(__dirname, 'src'),
         locales: path.resolve(__dirname, 'public', 'locales'),
         buildLocales: path.resolve(__dirname, 'build', 'locales'),
+        netify: path.resolve(__dirname, 'public', 'netify.toml')
     };
 
     const mode = env.mode || 'development';
