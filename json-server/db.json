@@ -620,14 +620,21 @@
       "id": "1",
       "username": "dzugaev1998@bk.ru",
       "password": "123",
-      "role": "ADMIN",
+      "roles": ["ADMIN"],
       "avatar": "https://www.arabsauto.com/wp-content/uploads/2020/04/Bugatti-chiron-2020-5.jpg"
     },
     {
       "id": "2",
-      "username": "eee",
+      "username": "user",
       "password": "123",
-      "role": "USER",
+      "roles": ["USER"],
+      "avatar": "https://animeshka.org/uploads/posts/2023-01/1674318087_animeshka-org-p-wallpaper-kali-linux-instagram-29.jpg"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "roles": ["MANAGER"],
       "avatar": "https://animeshka.org/uploads/posts/2023-01/1674318087_animeshka-org-p-wallpaper-kali-linux-instagram-29.jpg"
     }
   ],

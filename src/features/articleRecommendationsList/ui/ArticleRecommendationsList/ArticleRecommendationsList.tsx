@@ -19,7 +19,7 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
     const { data: articles, isLoading, error } = useArticleRecommendationsList(3)
 
     if (isLoading) return <Loader />
-    if (error) return <Text theme={TextTheme.ERROR} title={t('Ошибка при загрузке рекомендаций')} />
+    if (error || !articles) return <Text theme={TextTheme.ERROR} title={t('Ошибка при загрузке рекомендаций')} />
 
     return (
         <VStack gap="8" className={classNames('', {}, [className])}>

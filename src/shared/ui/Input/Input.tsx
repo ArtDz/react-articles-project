@@ -14,6 +14,7 @@ interface InputProps extends HTMLInputProps {
     id?: string
     labelName?: string
     readonly?: boolean
+    'data-testid'?: string
 }
 
 export const Input = memo((props: InputProps) => {
@@ -27,6 +28,7 @@ export const Input = memo((props: InputProps) => {
         id,
         type = 'text',
         readonly,
+        'data-testid': dataTestId,
         ...otherProps
     } = props
     const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,6 +37,7 @@ export const Input = memo((props: InputProps) => {
     return (
         <div className={classNames('', { [cls.readonly]: readonly }, [cls.form__group, cls.field])}>
             <input
+                data-testid={dataTestId}
                 value={value}
                 onChange={onChangeHandler}
                 placeholder={placeholder}

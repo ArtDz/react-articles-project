@@ -46,6 +46,7 @@ export const EditableProfileCardHeader = memo(({ className }: EditableProfileCar
                             <Button
                                 theme={ThemeButton.GLOW_ON_HOVER}
                                 onClick={onEdit}
+                                data-testid="EditableProfileCardHeader.EditButton"
                             >
                                 {t('Редактировать')}
                             </Button>
@@ -55,12 +56,14 @@ export const EditableProfileCardHeader = memo(({ className }: EditableProfileCar
                                 <Button
                                     theme={ThemeButton.GLOW_ON_HOVER_DANGER}
                                     onClick={onCancelEdit}
+                                    data-testid="EditableProfileCardHeader.CancelButton"
                                 >
                                     {t('Отменить')}
                                 </Button>
                                 <Button
                                     theme={ThemeButton.GLOW_ON_HOVER}
                                     onClick={onSave}
+                                    data-testid="EditableProfileCardHeader.SaveButton"
                                 >
                                     {t('Сохранить')}
                                 </Button>
