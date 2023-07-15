@@ -27,13 +27,9 @@
   position: absolute;
   right: -40px;
   bottom: 40px;
+  z-index: 10;
 }
 
 .items {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-  justify-content: center;
   height: 100%;
 }

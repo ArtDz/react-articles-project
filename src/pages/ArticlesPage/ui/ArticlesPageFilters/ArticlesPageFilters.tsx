@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { memo, useCallback, useMemo } from 'react';
+import { memo, useCallback } from 'react';
 import {
     ArticleSortField, ArticleTypeTabs, ArticleView, ArticleViewSelector
 } from 'entities/Article';
@@ -10,12 +10,13 @@ import { Input } from 'shared/ui/Input/Input';
 import { ArticleSortSelector } from 'entities/Article/ui/ArticleSortSelector/ArticleSortSelector';
 import { SortOrder } from 'shared/types';
 import { useDebounce } from 'shared/lib/hooks/useDebounce';
-import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs';
 import { ArticleType } from 'entities/Article/model/types/article';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import {
-    getArticlesPageOrder, getArticlesPageSearch,
-    getArticlesPageSort, getArticlesPageType,
+    getArticlesPageOrder,
+    getArticlesPageSearch,
+    getArticlesPageSort,
+    getArticlesPageType,
     getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors';
 import { articlePageActions } from '../../model/slice/articlePageSlice';
@@ -69,7 +70,7 @@ export const ArticlesPageFilters = memo(({ className }: ArticlesPageFiltersProps
     }, [dispatch, fetchData])
 
     return (
-        <div className={classNames('', {}, [className])}>
+        <div className={classNames(cls.articleFilters, {}, [className])}>
             <div className={cls.sortWrapper}>
                 <ArticleSortSelector
                     sort={sort}

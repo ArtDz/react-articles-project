@@ -595,6 +595,24 @@
       "userId": "1",
       "text": "python!!!",
       "id": "p5rMadd"
+    },
+    {
+      "articleId": "18",
+      "userId": "1",
+      "text": "asd",
+      "id": "It9WBfR"
+    },
+    {
+      "articleId": "8",
+      "userId": "1",
+      "text": "asd",
+      "id": "pyu36iX"
+    },
+    {
+      "articleId": "8",
+      "userId": "1",
+      "text": "qqq",
+      "id": "Hqd3Q_b"
     }
   ],
   "users": [
@@ -616,8 +634,8 @@
   "profile": [
     {
       "id": "1",
-      "first": "Tomass",
-      "lastname": "Kodoevv",
+      "first": "Tomas",
+      "lastname": "Kodoev",
       "age": 23,
       "currency": "RUB",
       "country": "Russia",
