@@ -1,11 +1,12 @@
 import { useTranslation } from 'react-i18next';
-import { memo, useCallback } from 'react';
-import { AddCommentForm } from 'features/addCommentForm';
-import { CommentList } from 'entities/Comment';
+import { memo, Suspense, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
-import { Text } from 'shared/ui/Text/Text';
+import { AddCommentForm } from '@/features/addCommentForm';
+import { CommentList } from '@/entities/Comment';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
+import { Text } from '@/shared/ui/Text/Text';
+import { Loader } from '@/shared/ui/Loader/Loader';
 import {
     fetchCommentsByArticleId
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
@@ -16,7 +17,7 @@ import cls from './ArticleDetailsComments.module.scss'
 
 interface ArticleDetailsCommentsProps {
     className?: string
-    id: string
+    id?: string
 }
 
 export const ArticleDetailsComments = memo(({ className, id }: ArticleDetailsCommentsProps) => {
@@ -39,7 +40,9 @@ export const ArticleDetailsComments = memo(({ className, id }: ArticleDetailsCom
                 title={t('Комментарии')}
                 className={cls.comsTitle}
             />
-            <AddCommentForm onSendComment={onSendComment} />
+            <Suspense fallback={<Loader />}>
+                <AddCommentForm onSendComment={onSendComment} />
+            </Suspense>
             <CommentList
                 isLoading={commentsIsLoading}
                 comments={comments}

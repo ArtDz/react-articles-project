@@ -1,14 +1,15 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { ProfileCard } from 'entities/Profile';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
+import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country';
+import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { ProfileCard } from '@/entities/Profile';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { ValidateProfileError } from '../../model/consts/consts';
 import {
     EditableProfileCardHeader
 } from '../EditableProfileCardHeader/EditableProfileCardHeader';
@@ -21,13 +22,12 @@ import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/get
 import {
     getProfileValidateErrors
 } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
-import { ValidateProfileError } from '../../model/types/editableProfileCardSchema';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 
 interface EditableProfileCardProps {
     className?: string;
-    id: string
+    id?: string
 }
 
 const reducers: ReducersList = {
