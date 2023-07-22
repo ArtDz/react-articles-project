@@ -5,8 +5,8 @@ import { AddCommentForm } from '@/features/addCommentForm';
 import { CommentList } from '@/entities/Comment';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
-import { Text } from '@/shared/ui/Text/Text';
-import { Loader } from '@/shared/ui/Loader/Loader';
+import { Text } from '@/shared/ui/Text';
+import { Loader } from '@/shared/ui/Loader';
 import {
     fetchCommentsByArticleId
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
