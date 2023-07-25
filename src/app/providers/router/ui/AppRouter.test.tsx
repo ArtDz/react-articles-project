@@ -56,7 +56,7 @@ describe('AppRouter.test', () => {
         expect(page).toBeInTheDocument()
     })
 
-    test('Доступ разрешён (присутствует роль)', async () => {
+    test('Доступ разрешен (присутствует роль)', async () => {
         componentRender(<AppRouter />, {
             route: getRouteAdmin(),
             initialState: {
