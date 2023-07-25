@@ -11,7 +11,7 @@ import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import cls from './Navbar.module.scss';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleCreate } from '@/shared/const/router';
 
 interface NavbarProps {
     className?: string;
@@ -34,7 +34,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
                 <Text className={cls.appName} title={t('BTR React App')} />
-                <AppLink to={RoutePath.article_create}>
+                <AppLink to={getRouteArticleCreate()}>
                     <Button>{t('Создать статью')}</Button>
                 </AppLink>
                 <HStack gap="16" className={cls.actions}>

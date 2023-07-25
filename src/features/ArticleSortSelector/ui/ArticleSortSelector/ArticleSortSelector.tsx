@@ -2,9 +2,9 @@ import { useTranslation } from 'react-i18next';
 import { memo, useMemo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Select, SelectOption } from '@/shared/ui/Select';
-import { SortOrder } from '@/shared/types';
-import { ArticleSortField } from '../../model/consts/articleConsts';
+import { SortOrder } from '@/shared/types/sort';
 import cls from './ArticleSortSelector.module.scss'
+import { ArticleSortField } from '@/entities/Article';
 
 interface ArticleSortSelectorProps {
     className?: string
@@ -32,7 +32,6 @@ export const ArticleSortSelector = memo(({
             value: 'desc',
             content: t('убыванию')
         }
-        // проверить рендер t
     ], [t])
 
     const sortFieldOptions = useMemo<SelectOption<ArticleSortField>[]>(() => [
@@ -48,7 +47,6 @@ export const ArticleSortSelector = memo(({
             value: ArticleSortField.VIEWS,
             content: t('просмотрам')
         },
-        // проверить рендер t
     ], [t])
 
     return (

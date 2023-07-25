@@ -13,7 +13,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     const { t } = useTranslation('profile')
 
     return (
-        <Page className={classNames('', {}, [className])}>
+        <Page data-testid="ProfilePage" className={classNames('', {}, [className])}>
             <EditableProfileCard id={id} />
         </Page>
     )
