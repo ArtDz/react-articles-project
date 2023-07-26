@@ -19,7 +19,7 @@ export const resetProfile = (profileId: string) => {
             country: 'Russia',
             city: 'Moscow',
             username: 'dzugaev1998@bk.ru',
-            avatar: 'https://www.arabsauto.com/wp-content/uploads/2020/04/Bugatti-chiron-2020-5.jpg'
+            avatar: 'https://www.arabsauto.com/wp-content/uploads/2020/04/Bugatti-chiron-2020-5.jpg',
         },
     })
 }

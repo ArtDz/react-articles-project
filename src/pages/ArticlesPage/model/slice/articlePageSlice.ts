@@ -1,19 +1,26 @@
-import { createEntityAdapter, createSlice, PayloadAction, } from '@reduxjs/toolkit'
-import { StateSchema } from '@/app/providers/StoreProvider';
 import {
-    Article, ArticleSortField, ArticleType, ArticleView
-} from '@/entities/Article';
-import { ARTICLE_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
-import { SortOrder } from '@/shared/types/sort';
-import { ArticlesPageSchema } from '../types/articlesPageSchema';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
+    createEntityAdapter,
+    createSlice,
+    PayloadAction,
+} from '@reduxjs/toolkit'
+import { StateSchema } from '@/app/providers/StoreProvider'
+import {
+    Article,
+    ArticleSortField,
+    ArticleType,
+    ArticleView,
+} from '@/entities/Article'
+import { ARTICLE_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localStorage'
+import { SortOrder } from '@/shared/types/sort'
+import { ArticlesPageSchema } from '../types/articlesPageSchema'
+import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList'
 
 const articlesAdapter = createEntityAdapter<Article>({
-    selectId: (comment) => comment.id,
+    selectId: comment => comment.id,
 })
 
 export const getArticles = articlesAdapter.getSelectors<StateSchema>(
-    (state) => state.articlesPage || articlesAdapter.getInitialState()
+    state => state.articlesPage || articlesAdapter.getInitialState()
 )
 
 const articlesPageSlice = createSlice({
@@ -31,7 +38,7 @@ const articlesPageSlice = createSlice({
         sort: ArticleSortField.CREATED,
         order: 'asc',
         search: '',
-        type: ArticleType.ALL
+        type: ArticleType.ALL,
     }),
     reducers: {
         setView: (state, action: PayloadAction<ArticleView>) => {
@@ -53,14 +60,16 @@ const articlesPageSlice = createSlice({
         setSearch: (state, action: PayloadAction<string>) => {
             state.search = action.payload
         },
-        initState: (state) => {
-            const view = localStorage.getItem(ARTICLE_VIEW_LOCALSTORAGE_KEY) as ArticleView
+        initState: state => {
+            const view = localStorage.getItem(
+                ARTICLE_VIEW_LOCALSTORAGE_KEY
+            ) as ArticleView
             state.view = view
             state.limit = view === ArticleView.BIG ? 4 : 9
             state._inited = true
-        }
+        },
     },
-    extraReducers: (builder) => {
+    extraReducers: builder => {
         builder
             .addCase(fetchArticlesList.pending, (state, action) => {
                 state.error = undefined
@@ -84,7 +93,7 @@ const articlesPageSlice = createSlice({
                 state.isLoading = false
                 state.error = action.payload
             })
-    }
+    },
 })
 
 export const { reducer: articlePageReducer } = articlesPageSlice

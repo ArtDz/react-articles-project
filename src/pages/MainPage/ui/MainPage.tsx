@@ -1,17 +1,17 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { Page } from '@/widgets/Page';
-import { Counter } from '@/entities/Counter';
+import React from 'react'
+import { useTranslation } from 'react-i18next'
+import { Page } from '@/widgets/Page'
+import { Counter } from '@/entities/Counter'
 
 const MainPage = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation()
 
     return (
         <Page data-testid="MainPage">
             {t('Главная страница')}
             <Counter />
         </Page>
-    );
-};
+    )
+}
 
-export default MainPage;
+export default MainPage

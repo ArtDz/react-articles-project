@@ -1,8 +1,11 @@
-import React, { InputHTMLAttributes, memo } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import React, { InputHTMLAttributes, memo } from 'react'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './Input.module.scss'
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
+type HTMLInputProps = Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    'value' | 'onChange' | 'readOnly'
+>
 
 interface InputProps extends HTMLInputProps {
     className?: string
@@ -35,7 +38,12 @@ export const Input = memo((props: InputProps) => {
         onChange?.(e.target.value)
     }
     return (
-        <div className={classNames('', { [cls.readonly]: readonly }, [cls.form__group, cls.field])}>
+        <div
+            className={classNames('', { [cls.readonly]: readonly }, [
+                cls.form__group,
+                cls.field,
+            ])}
+        >
             <input
                 data-testid={dataTestId}
                 value={value}
@@ -48,8 +56,9 @@ export const Input = memo((props: InputProps) => {
                 className={classNames(cls.form__field, {}, [className])}
                 {...otherProps}
             />
-            <label htmlFor={id} className={cls.form__label}>{labelName}</label>
+            <label htmlFor={id} className={cls.form__label}>
+                {labelName}
+            </label>
         </div>
-
     )
 })

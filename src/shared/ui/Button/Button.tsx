@@ -1,8 +1,6 @@
-import {
-    ButtonHTMLAttributes, memo, ReactNode
-} from 'react';
-import { classNames, Mods } from '@/shared/lib/classNames/classNames';
-import cls from './Button.module.scss';
+import { ButtonHTMLAttributes, memo, ReactNode } from 'react'
+import { classNames, Mods } from '@/shared/lib/classNames/classNames'
+import cls from './Button.module.scss'
 
 export const enum ThemeButton {
     CLEAR = 'clear',
@@ -10,7 +8,7 @@ export const enum ThemeButton {
     BACKGROUND = 'background',
     BACKGROUND_INVERTED = 'backgroundInverted',
     GLOW_ON_HOVER = 'glow-on-hover',
-    GLOW_ON_HOVER_DANGER = 'glow-on-hover-danger'
+    GLOW_ON_HOVER_DANGER = 'glow-on-hover-danger',
 }
 
 export const enum ButtonSize {
@@ -30,12 +28,18 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button = memo((props: ButtonProps) => {
     const {
-        className, children, theme = ThemeButton.OUTLINE, square, size = ButtonSize.M, disabled, ...otherProps
-    } = props;
+        className,
+        children,
+        theme = ThemeButton.OUTLINE,
+        square,
+        size = ButtonSize.M,
+        disabled,
+        ...otherProps
+    } = props
 
     const mods: Mods = {
         [cls.square]: square,
-        [cls.disabled]: disabled
+        [cls.disabled]: disabled,
     }
 
     return (
@@ -51,5 +55,5 @@ export const Button = memo((props: ButtonProps) => {
         >
             {children}
         </button>
-    );
+    )
 })

@@ -1,4 +1,4 @@
-import { Article } from '../../../src/entities/Article';
+import { Article } from '../../../src/entities/Article'
 
 const defaultArticle = {
     title: 'Тестовая статья',
@@ -7,19 +7,19 @@ const defaultArticle = {
     views: 1022,
     createdAt: '26.02.2022',
     userId: '1',
-    type: [
-        'SCIENCE'
-    ],
-    blocks: []
+    type: ['SCIENCE'],
+    blocks: [],
 }
 
 export const createArticle = (article?: Article) => {
-    return cy.request({
-        method: 'POST',
-        url: 'http://localhost:8000/articles',
-        headers: { Authorization: 'asd' },
-        body: article ?? defaultArticle,
-    }).then(resp => resp.body)
+    return cy
+        .request({
+            method: 'POST',
+            url: 'http://localhost:8000/articles',
+            headers: { Authorization: 'asd' },
+            body: article ?? defaultArticle,
+        })
+        .then(resp => resp.body)
 }
 
 export const removeArticle = (articleId: string) => {

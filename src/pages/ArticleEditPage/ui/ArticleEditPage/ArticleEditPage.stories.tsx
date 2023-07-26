@@ -1,6 +1,6 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import ArticleEditPage from './ArticleEditPage';
+import React from 'react'
+import { ComponentStory, ComponentMeta } from '@storybook/react'
+import ArticleEditPage from './ArticleEditPage'
 
 export default {
     title: 'pages/ArticleEditPage/ArticleEditPage',
@@ -8,9 +8,11 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ArticleEditPage>;
+} as ComponentMeta<typeof ArticleEditPage>
 
-const Template: ComponentStory<typeof ArticleEditPage> = (args) => <ArticleEditPage {...args} />;
+const Template: ComponentStory<typeof ArticleEditPage> = args => (
+    <ArticleEditPage {...args} />
+)
 
-export const Primary = Template.bind({});
-Primary.args = {};
+export const Primary = Template.bind({})
+Primary.args = {}

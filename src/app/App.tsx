@@ -1,14 +1,14 @@
-import React, { Suspense, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppRouter } from './providers/router';
-import { Navbar } from '@/widgets/Navbar';
-import { Sidebar } from '@/widgets/Sidebar';
-import { getUserInited, userActions } from '@/entities/User';
-import { useTheme } from '@/shared/lib/hooks/useTheme';
+import React, { Suspense, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { AppRouter } from './providers/router'
+import { Navbar } from '@/widgets/Navbar'
+import { Sidebar } from '@/widgets/Sidebar'
+import { getUserInited, userActions } from '@/entities/User'
+import { useTheme } from '@/shared/lib/hooks/useTheme'
 
 function App() {
-    const { theme } = useTheme();
+    const { theme } = useTheme()
     const dispatch = useDispatch()
     const inited = useSelector(getUserInited)
 
@@ -26,7 +26,7 @@ function App() {
                 </div>
             </Suspense>
         </div>
-    );
+    )
 }
 
-export default App;
+export default App

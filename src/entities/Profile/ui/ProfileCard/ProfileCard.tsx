@@ -1,13 +1,13 @@
-import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text, TextAlign, TextTheme } from '@/shared/ui/Text';
-import { Input } from '@/shared/ui/Input';
-import { Loader } from '@/shared/ui/Loader';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Currency, CurrencySelect } from '@/entities/Currency';
-import { Country, CountrySelect } from '@/entities/Country';
+import { useTranslation } from 'react-i18next'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { Text, TextAlign, TextTheme } from '@/shared/ui/Text'
+import { Input } from '@/shared/ui/Input'
+import { Loader } from '@/shared/ui/Loader'
+import { Avatar } from '@/shared/ui/Avatar'
+import { Currency, CurrencySelect } from '@/entities/Currency'
+import { Country, CountrySelect } from '@/entities/Country'
 import cls from './ProfileCard.module.scss'
-import { Profile } from '../../model/types/profile';
+import { Profile } from '../../model/types/profile'
 
 interface ProfileCardProps {
     className?: string
@@ -38,14 +38,18 @@ export const ProfileCard = ({
     onChangeUsername,
     onChangeAvatar,
     onChangeCurrency,
-    onChangeCountry
-
+    onChangeCountry,
 }: ProfileCardProps) => {
     const { t } = useTranslation('profile')
 
     if (isLoading) {
         return (
-            <div className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+            <div
+                className={classNames(cls.ProfileCard, {}, [
+                    className,
+                    cls.loading,
+                ])}
+            >
                 <Loader />
             </div>
         )
@@ -53,7 +57,12 @@ export const ProfileCard = ({
 
     if (error) {
         return (
-            <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+            <div
+                className={classNames(cls.ProfileCard, {}, [
+                    className,
+                    cls.error,
+                ])}
+            >
                 <Text
                     theme={TextTheme.ERROR}
                     align={TextAlign.CENTER}
@@ -65,8 +74,13 @@ export const ProfileCard = ({
     }
 
     return (
-        <div className={classNames(cls.ProfileCard, { [cls.readonly]: readonly }, [className])}>
-
+        <div
+            className={classNames(
+                cls.ProfileCard,
+                { [cls.readonly]: readonly },
+                [className]
+            )}
+        >
             <div className={cls.data}>
                 {data?.avatar && (
                     <div className={cls.avatarWrapper}>
@@ -136,7 +150,6 @@ export const ProfileCard = ({
                     value={data?.country}
                 />
             </div>
-
         </div>
     )
 }

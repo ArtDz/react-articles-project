@@ -1,6 +1,6 @@
-import { memo, ReactNode, useCallback } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Card, CardTheme } from '../Card/Card';
+import { memo, ReactNode, useCallback } from 'react'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { Card, CardTheme } from '../Card/Card'
 import cls from './Tabs.module.scss'
 
 export interface TabItem {
@@ -15,25 +15,32 @@ interface TabsProps {
     onTabClick: (tab: TabItem) => void
 }
 
-export const Tabs = memo(({
-    className, tabs, onTabClick, value
-}: TabsProps) => {
-    const clickHandle = useCallback((tab: TabItem) => () => {
-        onTabClick(tab)
-    }, [onTabClick])
+export const Tabs = memo(
+    ({ className, tabs, onTabClick, value }: TabsProps) => {
+        const clickHandle = useCallback(
+            (tab: TabItem) => () => {
+                onTabClick(tab)
+            },
+            [onTabClick]
+        )
 
-    return (
-        <div className={classNames(cls.Tabs, {}, [className])}>
-            {tabs.map((tab) => (
-                <Card
-                    className={cls.tab}
-                    key={tab.value}
-                    onClick={clickHandle(tab)}
-                    theme={tab.value === value ? CardTheme.NORMAL : CardTheme.OUTLINED}
-                >
-                    {tab.content}
-                </Card>
-            ))}
-        </div>
-    )
-})
+        return (
+            <div className={classNames(cls.Tabs, {}, [className])}>
+                {tabs.map(tab => (
+                    <Card
+                        className={cls.tab}
+                        key={tab.value}
+                        onClick={clickHandle(tab)}
+                        theme={
+                            tab.value === value
+                                ? CardTheme.NORMAL
+                                : CardTheme.OUTLINED
+                        }
+                    >
+                        {tab.content}
+                    </Card>
+                ))}
+            </div>
+        )
+    }
+)

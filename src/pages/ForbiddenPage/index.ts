@@ -1,5 +1,3 @@
 import { ForbiddenPageAsync } from './ui/ForbiddenPage.saync'
 
-export {
-    ForbiddenPageAsync as ForbiddenPage
-};
+export { ForbiddenPageAsync as ForbiddenPage }

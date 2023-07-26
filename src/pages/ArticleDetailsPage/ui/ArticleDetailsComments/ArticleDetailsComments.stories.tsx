@@ -1,6 +1,6 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ArticleDetailsComments } from './ArticleDetailsComments';
+import React from 'react'
+import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { ArticleDetailsComments } from './ArticleDetailsComments'
 
 export default {
     title: 'changeThisName/ArticleDetailsComments',
@@ -8,9 +8,11 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ArticleDetailsComments>;
+} as ComponentMeta<typeof ArticleDetailsComments>
 
-const Template: ComponentStory<typeof ArticleDetailsComments> = (args) => <ArticleDetailsComments {...args} />;
+const Template: ComponentStory<typeof ArticleDetailsComments> = args => (
+    <ArticleDetailsComments {...args} />
+)
 
-export const Primary = Template.bind({});
-Primary.args = {};
+export const Primary = Template.bind({})
+Primary.args = {}

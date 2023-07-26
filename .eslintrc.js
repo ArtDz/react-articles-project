@@ -8,6 +8,7 @@ module.exports = {
         'plugin:react/recommended',
         'airbnb',
         'plugin:i18next/recommended',
+        'prettier',
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -23,12 +24,9 @@ module.exports = {
         'i18next',
         'react-hooks',
         'ulbi-tv-plugin',
-        'unused-imports'
+        'unused-imports',
     ],
     rules: {
-        'react/jsx-indent': [2, 4],
-        'react/jsx-indent-props': [2, 4],
-        indent: [2, 4],
         'react/jsx-filename-extension': [
             2,
             { extensions: ['.js', '.jsx', '.tsx'] },
@@ -51,7 +49,8 @@ module.exports = {
                 markupOnly: true,
                 ignoreAttribute: [
                     'data-testid',
-                    'target', 'to',
+                    'target',
+                    'to',
                     'placeholder',
                     'id',
                     'name',
@@ -63,13 +62,14 @@ module.exports = {
                     'gap',
                     'role',
                     'as',
-                    'defaultValue'
+                    'defaultValue',
                 ],
             },
         ],
         'max-len': ['error', { ignoreComments: true, code: 150 }],
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
+        'eol-last': 'off',
         semi: 'off',
         'comma-dangle': 'off',
         'react-hooks/rules-of-hooks': 'error',
@@ -91,22 +91,27 @@ module.exports = {
             'error',
             {
                 alias: '@',
-                testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx']
-            }
+                testFilesPatterns: [
+                    '**/*.test.*',
+                    '**/*.story.*',
+                    '**/StoreDecorator.tsx',
+                ],
+            },
         ],
+        'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
     },
     globals: {
         __IS_DEV__: true,
         __API__: true,
-        __PROJECT__: true
+        __PROJECT__: true,
     },
     overrides: [
         {
             files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
             rules: {
                 'i18next/no-literal-string': 'off',
-                'max-len': 'off'
+                'max-len': 'off',
             },
         },
     ],
-};
+}

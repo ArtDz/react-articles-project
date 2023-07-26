@@ -1,5 +1,5 @@
-import { CSSProperties, memo } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { CSSProperties, memo } from 'react'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './Skeleton.module.scss'
 
 interface SkeletonProps {
@@ -9,18 +9,18 @@ interface SkeletonProps {
     borderRadius?: string
 }
 
-export const Skeleton = memo(({
-    className, height, width, borderRadius
-}: SkeletonProps) => {
-    const styles: CSSProperties = {
-        width,
-        height,
-        borderRadius
+export const Skeleton = memo(
+    ({ className, height, width, borderRadius }: SkeletonProps) => {
+        const styles: CSSProperties = {
+            width,
+            height,
+            borderRadius,
+        }
+        return (
+            <div
+                style={styles}
+                className={classNames(cls.Skeleton, {}, [className])}
+            />
+        )
     }
-    return (
-        <div
-            style={styles}
-            className={classNames(cls.Skeleton, {}, [className])}
-        />
-    )
-})
+)

@@ -1,13 +1,17 @@
-import { screen } from '@testing-library/react';
-import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
-import AppRouter from './AppRouter';
-import { getRouteAbout, getRouteAdmin, getRouteProfile } from '@/shared/const/router';
-import { UserRole } from '@/entities/User';
+import { screen } from '@testing-library/react'
+import { componentRender } from '@/shared/lib/tests/componentRender/componentRender'
+import AppRouter from './AppRouter'
+import {
+    getRouteAbout,
+    getRouteAdmin,
+    getRouteProfile,
+} from '@/shared/const/router'
+import { UserRole } from '@/entities/User'
 
 describe('AppRouter.test', () => {
     test('Страница должна отрендериться', async () => {
         componentRender(<AppRouter />, {
-            route: getRouteAbout()
+            route: getRouteAbout(),
         })
 
         const page = await screen.findByTestId('AboutPage')
@@ -16,7 +20,7 @@ describe('AppRouter.test', () => {
 
     test('Страница не найдена', async () => {
         componentRender(<AppRouter />, {
-            route: '/sdfsdf'
+            route: '/sdfsdf',
         })
 
         const page = await screen.findByTestId('NotFoundPage')
@@ -25,7 +29,7 @@ describe('AppRouter.test', () => {
 
     test('Редирект неавторизованного пользователя на главную страницу', async () => {
         componentRender(<AppRouter />, {
-            route: getRouteProfile('1')
+            route: getRouteProfile('1'),
         })
 
         const page = await screen.findByTestId('MainPage')
@@ -36,8 +40,8 @@ describe('AppRouter.test', () => {
         componentRender(<AppRouter />, {
             route: getRouteProfile('1'),
             initialState: {
-                user: { _inited: true, authData: {} }
-            }
+                user: { _inited: true, authData: {} },
+            },
         })
 
         const page = await screen.findByTestId('ProfilePage')
@@ -48,8 +52,8 @@ describe('AppRouter.test', () => {
         componentRender(<AppRouter />, {
             route: getRouteAdmin(),
             initialState: {
-                user: { _inited: true, authData: {} }
-            }
+                user: { _inited: true, authData: {} },
+            },
         })
 
         const page = await screen.findByTestId('ForbiddenPage')
@@ -60,8 +64,8 @@ describe('AppRouter.test', () => {
         componentRender(<AppRouter />, {
             route: getRouteAdmin(),
             initialState: {
-                user: { _inited: true, authData: { roles: [UserRole.ADMIN] } }
-            }
+                user: { _inited: true, authData: { roles: [UserRole.ADMIN] } },
+            },
         })
 
         const page = await screen.findByTestId('AdminPanelPage')

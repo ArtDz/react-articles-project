@@ -1,6 +1,6 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ArticleInfiniteList } from './ArticleInfiniteList';
+import React from 'react'
+import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { ArticleInfiniteList } from './ArticleInfiniteList'
 
 export default {
     title: 'changeThisName/ArticleInfiniteList',
@@ -8,9 +8,11 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ArticleInfiniteList>;
+} as ComponentMeta<typeof ArticleInfiniteList>
 
-const Template: ComponentStory<typeof ArticleInfiniteList> = (args) => <ArticleInfiniteList {...args} />;
+const Template: ComponentStory<typeof ArticleInfiniteList> = args => (
+    <ArticleInfiniteList {...args} />
+)
 
-export const Primary = Template.bind({});
-Primary.args = {};
+export const Primary = Template.bind({})
+Primary.args = {}

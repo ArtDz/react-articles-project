@@ -1,19 +1,27 @@
-import { USER_LOCALSTORAGE_KEY } from '../../../src/shared/const/localStorage';
-import { User } from '../../../src/entities/User';
-import { selectByTestId } from '../../helpers/selectByTestId';
+import { USER_LOCALSTORAGE_KEY } from '../../../src/shared/const/localStorage'
+import { User } from '../../../src/entities/User'
+import { selectByTestId } from '../../helpers/selectByTestId'
 
-export const login = (username: string = 'dzugaev1998@bk.ru', password:string = '123') => {
-    return cy.request({
-        method: 'POST',
-        url: 'http://localhost:8000/login',
-        body: {
-            username,
-            password,
-        },
-    }).then(({ body }) => {
-        window.localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(body))
-        return body
-    })
+export const login = (
+    username: string = 'dzugaev1998@bk.ru',
+    password: string = '123'
+) => {
+    return cy
+        .request({
+            method: 'POST',
+            url: 'http://localhost:8000/login',
+            body: {
+                username,
+                password,
+            },
+        })
+        .then(({ body }) => {
+            window.localStorage.setItem(
+                USER_LOCALSTORAGE_KEY,
+                JSON.stringify(body)
+            )
+            return body
+        })
 }
 
 export const getByTestId = (testId: string) => {

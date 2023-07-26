@@ -1,16 +1,16 @@
-import { memo } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { memo } from 'react'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './Text.module.scss'
 
 export const enum TextTheme {
-    PRIMARY='primary',
-    ERROR='error'
+    PRIMARY = 'primary',
+    ERROR = 'error',
 }
 
 export const enum TextAlign {
-    RIGHT= 'right',
+    RIGHT = 'right',
     LEFT = 'left',
-    CENTER = 'center'
+    CENTER = 'center',
 }
 
 export const enum TextSize {
@@ -37,14 +37,43 @@ const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
     [TextSize.L]: 'h1',
 }
 
-export const Text = memo(({
-    className, 'data-testid': dataTestId = '', title, size = TextSize.M, text, align = TextAlign.LEFT, theme = TextTheme.PRIMARY
-}: TextProps) => {
-    const HeaderTag = mapSizeToHeaderTag[size]
-    return (
-        <div className={classNames(cls.Text, {}, [className, cls[theme], cls[size], cls[align]])}>
-            {title && <HeaderTag className={cls.title} data-testid={`${dataTestId}.Header`}>{title}</HeaderTag>}
-            {text && <p data-testid={`${dataTestId}.Paragraph`} className={cls.text}>{text}</p>}
-        </div>
-    )
-})
+export const Text = memo(
+    ({
+        className,
+        'data-testid': dataTestId = '',
+        title,
+        size = TextSize.M,
+        text,
+        align = TextAlign.LEFT,
+        theme = TextTheme.PRIMARY,
+    }: TextProps) => {
+        const HeaderTag = mapSizeToHeaderTag[size]
+        return (
+            <div
+                className={classNames(cls.Text, {}, [
+                    className,
+                    cls[theme],
+                    cls[size],
+                    cls[align],
+                ])}
+            >
+                {title && (
+                    <HeaderTag
+                        className={cls.title}
+                        data-testid={`${dataTestId}.Header`}
+                    >
+                        {title}
+                    </HeaderTag>
+                )}
+                {text && (
+                    <p
+                        data-testid={`${dataTestId}.Paragraph`}
+                        className={cls.text}
+                    >
+                        {text}
+                    </p>
+                )}
+            </div>
+        )
+    }
+)

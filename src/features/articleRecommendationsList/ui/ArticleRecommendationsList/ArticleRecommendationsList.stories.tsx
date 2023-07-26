@@ -1,10 +1,10 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from 'react'
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import withMock from 'storybook-addon-mock';
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Article } from '@/entities/Article';
-import { ArticleRecommendationsList } from './ArticleRecommendationsList';
+import withMock from 'storybook-addon-mock'
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
+import { Article } from '@/entities/Article'
+import { ArticleRecommendationsList } from './ArticleRecommendationsList'
 
 export default {
     title: 'features/ArticleRecommendationsList',
@@ -12,10 +12,12 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-    decorators: [withMock]
-} as ComponentMeta<typeof ArticleRecommendationsList>;
+    decorators: [withMock],
+} as ComponentMeta<typeof ArticleRecommendationsList>
 
-const Template: ComponentStory<typeof ArticleRecommendationsList> = (args) => <ArticleRecommendationsList {...args} />;
+const Template: ComponentStory<typeof ArticleRecommendationsList> = args => (
+    <ArticleRecommendationsList {...args} />
+)
 
 const article: Article = {
     id: '1',
@@ -26,10 +28,10 @@ const article: Article = {
     blocks: [],
     type: [],
     title: '123',
-    subtitle: 'lorem22'
+    subtitle: 'lorem22',
 }
 
-export const Normal = Template.bind({});
+export const Normal = Template.bind({})
 Normal.args = {}
 Normal.decorators = [StoreDecorator({})]
 Normal.parameters = {
@@ -42,7 +44,7 @@ Normal.parameters = {
                 { ...article, id: '1' },
                 { ...article, id: '2' },
                 { ...article, id: '3' },
-            ]
-        }
-    ]
+            ],
+        },
+    ],
 }

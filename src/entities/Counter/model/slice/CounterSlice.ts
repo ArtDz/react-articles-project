@@ -1,25 +1,25 @@
-import { PayloadAction } from '@reduxjs/toolkit';
-import { CounterSchema } from '../types/CounterSchema';
-import { buildSlice } from '@/shared/lib/store';
+import { PayloadAction } from '@reduxjs/toolkit'
+import { CounterSchema } from '../types/CounterSchema'
+import { buildSlice } from '@/shared/lib/store'
 
 const initialState: CounterSchema = {
-    value: 0
+    value: 0,
 }
 
 export const counterSlice = buildSlice({
     name: 'counter',
     initialState,
     reducers: {
-        increment: (state) => {
+        increment: state => {
             state.value += 1
         },
         add: (state, { payload }: PayloadAction<number>) => {
             state.value += payload
         },
-        decrement: (state) => {
+        decrement: state => {
             state.value -= 1
-        }
-    }
+        },
+    },
 })
 
 export const { actions: counterActions } = counterSlice

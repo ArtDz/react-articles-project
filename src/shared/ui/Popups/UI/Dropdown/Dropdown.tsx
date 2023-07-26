@@ -1,46 +1,47 @@
 import { Menu } from '@headlessui/react'
-import { Fragment, ReactNode } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { DropdownDirection } from '@/shared/types/ui';
-import { AppLink } from '../../../AppLink/AppLink';
+import { Fragment, ReactNode } from 'react'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { DropdownDirection } from '@/shared/types/ui'
+import { AppLink } from '../../../AppLink/AppLink'
 import cls from './Dropdown.module.scss'
-import { mapDirectionClass } from '../../styles/consts';
+import { mapDirectionClass } from '../../styles/consts'
 import popupCls from '../../styles/popup.module.scss'
 
 export interface DropdownItem {
-    disabled?: boolean;
-    content?: ReactNode;
-    onClick?: () => void;
-    href?: string;
+    disabled?: boolean
+    content?: ReactNode
+    onClick?: () => void
+    href?: string
 }
 
 interface DropdownProps {
-    className?: string;
-    items: DropdownItem[];
+    className?: string
+    items: DropdownItem[]
     direction?: DropdownDirection
-    trigger: ReactNode;
+    trigger: ReactNode
 }
 
 export function Dropdown(props: DropdownProps) {
-    const {
-        className, trigger, items, direction = 'bottom right'
-    } = props
+    const { className, trigger, items, direction = 'bottom right' } = props
 
     const menuClasses = [mapDirectionClass[direction]]
 
     return (
-        <Menu as="div" className={classNames('', {}, [className, popupCls.popup])}>
-            <Menu.Button className={popupCls.trigger}>
-                {trigger}
-            </Menu.Button>
+        <Menu
+            as="div"
+            className={classNames('', {}, [className, popupCls.popup])}
+        >
+            <Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>
             <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
                 {items.map((item, index) => {
-                    const content = ({ active }: {active: boolean}) => (
+                    const content = ({ active }: { active: boolean }) => (
                         <button
                             disabled={item.disabled}
                             type="button"
                             onClick={item.onClick}
-                            className={classNames(cls.item, { [popupCls.active]: active })}
+                            className={classNames(cls.item, {
+                                [popupCls.active]: active,
+                            })}
                         >
                             {item.content}
                         </button>

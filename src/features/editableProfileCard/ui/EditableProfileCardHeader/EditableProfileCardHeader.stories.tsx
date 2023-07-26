@@ -1,6 +1,6 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { EditableProfileCardHeader } from './EditableProfileCardHeader';
+import React from 'react'
+import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { EditableProfileCardHeader } from './EditableProfileCardHeader'
 
 export default {
     title: 'features/EditableProfileCard/EditableProfileCardHeader',
@@ -8,9 +8,11 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof EditableProfileCardHeader>;
+} as ComponentMeta<typeof EditableProfileCardHeader>
 
-const Template: ComponentStory<typeof EditableProfileCardHeader> = (args) => <EditableProfileCardHeader {...args} />;
+const Template: ComponentStory<typeof EditableProfileCardHeader> = args => (
+    <EditableProfileCardHeader {...args} />
+)
 
-export const Primary = Template.bind({});
-Primary.args = {};
+export const Primary = Template.bind({})
+Primary.args = {}
