@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { memo, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './StarRating.module.scss'
@@ -20,7 +19,6 @@ export const StarRating = memo(({
     onSelect,
     size = 30
 }: StarRatingProps) => {
-    const { t } = useTranslation()
     const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars)
     const [isSelected, setIsSelected] = useState(Boolean(selectedStars))
 
@@ -61,6 +59,8 @@ export const StarRating = memo(({
                         onMouseEnter={onHover(starNumber)}
                         onMouseLeave={onLeave}
                         onClick={onClick(starNumber)}
+                        data-testid={`StarRating.${starNumber}`}
+                        data-selected={currentStarsCount >= starNumber}
                     />
                 )
             })}

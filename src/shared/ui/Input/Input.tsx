@@ -46,6 +46,7 @@ export const Input = memo((props: InputProps) => {
                 id={id}
                 readOnly={readonly}
                 className={classNames(cls.form__field, {}, [className])}
+                {...otherProps}
             />
             <label htmlFor={id} className={cls.form__label}>{labelName}</label>
         </div>

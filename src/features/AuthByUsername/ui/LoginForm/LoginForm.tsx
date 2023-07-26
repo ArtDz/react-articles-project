@@ -56,7 +56,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                 <Input
                     placeholder="Name"
                     name="username"
-                    labelName="login"
+                    labelName="common"
                     id="username"
                     onChange={onChangeUserName}
                     value={username}

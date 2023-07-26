@@ -1,4 +1,3 @@
-import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/shared/ui/Button';
 import { useCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
@@ -6,7 +5,6 @@ import { useCounterActions } from '../model/slice/CounterSlice';
 import { VStack } from '@/shared/ui/Stack';
 
 export const Counter = () => {
-    const dispatch = useDispatch()
     const counterValue = useCounterValue()
     const { t } = useTranslation()
     // @ts-ignore

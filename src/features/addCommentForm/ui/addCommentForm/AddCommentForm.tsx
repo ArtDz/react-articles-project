@@ -7,7 +7,7 @@ import { Button } from '@/shared/ui/Button';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slice/addCommentFormSlice';
-import { getAddCommentFormError, getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors';
+import { getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors';
 import cls from './AddCommentForm.module.scss'
 
 export interface AddCommentFormProps {
@@ -22,7 +22,6 @@ const reducers: ReducersList = {
 const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) => {
     const { t } = useTranslation()
     const text = useSelector(getAddCommentFormText)
-    const error = useSelector(getAddCommentFormError)
     const dispatch = useAppDispatch()
 
     const onCommentTextChange = useCallback((value: string) => {
@@ -36,8 +35,9 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls.addCommentForm, {}, [className])}>
+            <div data-testid="AddCommentForm" className={classNames(cls.addCommentForm, {}, [className])}>
                 <Input
+                    data-testid="AddCommentForm.Input"
                     value={text}
                     onChange={onCommentTextChange}
                     labelName={t('Введите текст комментария')}
@@ -45,7 +45,12 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
                     id="addCommentForm"
                     placeholder={t('Введите текст комментария')}
                 />
-                <Button onClick={onSendHandler}>{t('Отправить')}</Button>
+                <Button
+                    data-testid="AddCommentForm.Button"
+                    onClick={onSendHandler}
+                >
+                    {t('Отправить')}
+                </Button>
             </div>
         </DynamicModuleLoader>
     )

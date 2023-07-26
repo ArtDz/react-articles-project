@@ -88,6 +88,7 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
                     <Avatar size={200} src={article?.img} className={cls.avatar} />
                 </div>
                 <Text
+                    data-testid="ArticleDetails.Info"
                     className={cls.title}
                     title={article?.title}
                     text={article?.subtitle}

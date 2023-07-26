@@ -537,6 +537,79 @@
           ]
         }
       ]
+    },
+    {
+      "id": "BBh0oao"
+    },
+    {
+      "id": "jxSivF1"
+    },
+    {
+      "id": "8oKyMJY"
+    },
+    {
+      "id": "t0JwBRW"
+    },
+    {
+      "id": "n4Jc7V3"
+    },
+    {
+      "id": "89Yj2Gp"
+    },
+    {
+      "id": "uarE_Rg"
+    },
+    {
+      "title": "Тестовая статья",
+      "subtitle": "БиологиЯ",
+      "img": "https://onehealthtrust.org/wp-content/uploads/2021/02/shutterstock_1676155375-scaled.jpg",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "7_mKKN3"
+    },
+    {
+      "title": "Тестовая статья",
+      "subtitle": "БиологиЯ",
+      "img": "https://onehealthtrust.org/wp-content/uploads/2021/02/shutterstock_1676155375-scaled.jpg",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "91NT8Mr"
+    },
+    {
+      "title": "Тестовая статья",
+      "subtitle": "БиологиЯ",
+      "img": "https://onehealthtrust.org/wp-content/uploads/2021/02/shutterstock_1676155375-scaled.jpg",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "PIIpLDG"
+    },
+    {
+      "title": "Тестовая статья",
+      "subtitle": "БиологиЯ",
+      "img": "https://onehealthtrust.org/wp-content/uploads/2021/02/shutterstock_1676155375-scaled.jpg",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "t6Sw-VZ"
     }
   ],
   "comments": [
@@ -635,6 +708,12 @@
       "userId": "1",
       "text": "qqq",
       "id": "Hqd3Q_b"
+    },
+    {
+      "articleId": "PIIpLDG",
+      "userId": "1",
+      "text": "text",
+      "id": "gj1vb_T"
     }
   ],
   "users": [
@@ -664,6 +743,15 @@
         "MANAGER"
       ],
       "avatar": "https://animeshka.org/uploads/posts/2023-01/1674318087_animeshka-org-p-wallpaper-kali-linux-instagram-29.jpg"
+    },
+    {
+      "id": "4",
+      "username": "dzugaev1998@bk.ru",
+      "password": "123",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://www.arabsauto.com/wp-content/uploads/2020/04/Bugatti-chiron-2020-5.jpg"
     }
   ],
   "profile": [
@@ -688,6 +776,17 @@
       "city": "Moscow",
       "username": "user",
       "avatar": "https://animeshka.org/uploads/posts/2023-01/1674318087_animeshka-org-p-wallpaper-kali-linux-instagram-29.jpg"
+    },
+    {
+      "id": "4",
+      "first": "Tomas",
+      "lastname": "Kodoev",
+      "age": 23,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "dzugaev1998@bk.ru",
+      "avatar": "https://www.arabsauto.com/wp-content/uploads/2020/04/Bugatti-chiron-2020-5.jpg"
     }
   ],
   "article-ratings": [

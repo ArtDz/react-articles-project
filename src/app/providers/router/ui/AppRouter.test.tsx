@@ -19,7 +19,7 @@ describe('AppRouter.test', () => {
             route: '/sdfsdf'
         })
 
-        const page = await screen.findByTestId('NotFountPage')
+        const page = await screen.findByTestId('NotFoundPage')
         expect(page).toBeInTheDocument()
     })
 

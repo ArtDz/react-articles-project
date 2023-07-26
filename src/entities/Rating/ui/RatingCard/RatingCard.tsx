@@ -63,12 +63,21 @@ export const RatingCard = memo(({
                 labelName="Отзыв"
                 name="rating-input"
                 placeholder="rating-input"
+                data-testid="RatingCard.Input"
             />
             <HStack max gap="16" justify="end">
-                <Button onClick={cancelHandle} theme={ThemeButton.GLOW_ON_HOVER_DANGER}>
+                <Button
+                    data-testid="RatingCard.Close"
+                    onClick={cancelHandle}
+                    theme={ThemeButton.GLOW_ON_HOVER_DANGER}
+                >
                     {t('Закрыть')}
                 </Button>
-                <Button onClick={acceptHandle} theme={ThemeButton.GLOW_ON_HOVER}>
+                <Button
+                    data-testid="RatingCard.Send"
+                    onClick={acceptHandle}
+                    theme={ThemeButton.GLOW_ON_HOVER}
+                >
                     {t('Отправить')}
                 </Button>
             </HStack>
@@ -76,7 +85,7 @@ export const RatingCard = memo(({
     )
 
     return (
-        <Card max className={className}>
+        <Card data-testid="RatingCard" max className={className}>
             <VStack align="center" gap="8" max>
                 <Text title={starsCount ? t('Спасибо за оценку!') : title} />
                 <StarRating selectedStars={starsCount} onSelect={onSelectStars} />
