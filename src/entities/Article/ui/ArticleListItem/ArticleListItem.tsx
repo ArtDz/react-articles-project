@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next'
 import { HTMLAttributeAnchorTarget, memo } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Text } from '@/shared/ui/Text'
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg'
@@ -27,7 +26,6 @@ interface ArticleListItemProps {
 export const ArticleListItem = memo(
     ({ className, view, article, target }: ArticleListItemProps) => {
         const { t } = useTranslation()
-        const navigate = useNavigate()
 
         const types = (
             <Text text={article.type.join(', ')} className={cls.types} />

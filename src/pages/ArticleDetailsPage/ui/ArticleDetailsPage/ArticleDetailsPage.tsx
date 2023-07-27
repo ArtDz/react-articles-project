@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next'
 import { memo } from 'react'
 import { useParams } from 'react-router-dom'
 import { ArticleDetails } from '@/entities/Article'
@@ -14,6 +13,8 @@ import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDet
 import { articleDetailsPageReducer } from '../../model/slice'
 import cls from './ArticleDetailsPage.module.scss'
 import { ArticleRating } from '@/features/articleRating'
+import { getFeatureFlags } from '@/shared/lib/features'
+import { Counter } from '@/entities/Counter'
 
 interface ArticleDetailsPageProps {
     className?: string
@@ -24,8 +25,9 @@ const reducers: ReducersList = {
 }
 
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
-    const { t } = useTranslation('article-details')
     const { id } = useParams<{ id: string }>()
+    const isArticleRatingEnabled = getFeatureFlags('isArticleRatingEnabled')
+    const isCounterEnabled = getFeatureFlags('isCounterEnabled')
 
     if (!id) {
         return null
@@ -38,7 +40,8 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
             >
                 <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
-                <ArticleRating articleId={id} />
+                {isCounterEnabled && <Counter />}
+                {isArticleRatingEnabled && <ArticleRating articleId={id} />}
                 <ArticleRecommendationsList />
                 <ArticleDetailsComments id={id} />
             </Page>
