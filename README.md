@@ -107,24 +107,24 @@ import { Button, ButtonSize, ButtonTheme } from './Button';
 import { Theme } from '@/shared/const/theme';
 
 export default {
-    title: 'shared/Button',
-    component: Button,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+   title: 'shared/Button',
+   component: Button,
+   argTypes: {
+      backgroundColor: { control: 'color' },
+   },
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    children: 'Text',
+   children: 'Text',
 };
 
 export const Clear = Template.bind({});
 Clear.args = {
-    children: 'Text',
-    theme: ButtonTheme.CLEAR,
+   children: 'Text',
+   theme: ButtonTheme.CLEAR,
 };
 ```
 
@@ -170,6 +170,24 @@ Clear.args = {
 
 ----
 
+### Работа с feature-flags
+
+Разрешено использование feature flags только с помощью хелпера toggleFeatures
+
+в него передается объект с опциями
+
+{
+name: название фича-флага,
+on: функция, которая отработает после Включения фичи
+of: функция, которая отработает после ВЫключения фичи
+}
+
+Для автоматического удаления фичи использовать скрипт remove-feature.ts,
+который принимает 2 аргумента
+1. Название удаляемого фича-флага
+2. Состояние (on\off)
+
+----
 
 ## Сущности (entities)
 

@@ -27,6 +27,7 @@ interface TextProps {
     align?: TextAlign
     size?: TextSize
     'data-testid'?: string
+    style?: any
 }
 
 type HeaderTagType = 'h1' | 'h2' | 'h3'
@@ -46,6 +47,7 @@ export const Text = memo(
         text,
         align = TextAlign.LEFT,
         theme = TextTheme.PRIMARY,
+        style,
     }: TextProps) => {
         const HeaderTag = mapSizeToHeaderTag[size]
         return (
@@ -67,6 +69,7 @@ export const Text = memo(
                 )}
                 {text && (
                     <p
+                        style={style}
                         data-testid={`${dataTestId}.Paragraph`}
                         className={cls.text}
                     >
